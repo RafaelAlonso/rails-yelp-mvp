@@ -3,5 +3,5 @@ class Review < ApplicationRecord
 
   validates :restaurant, presence: true
   validates :content, presence: true
-  validates :rating, inclusion: { in: 0..5, allow_nil: true }
+  validates :rating, inclusion: { in: 0..5, allow_nil: true }, numericality: { only_integer: true }
 end
