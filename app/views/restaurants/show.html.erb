@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="restaurant-header">
+    <h1 class="text-center"><%= @restaurant.name %></h1>
+    <h4 class="text-center"><%= @restaurant.address %></h4>
+  </div>
+  <div class="restaurant-info text-center">
+    <p>Category: <%= @restaurant.category %></p>
+    <p>Phone Number: <%= @restaurant.phone_number %></p>
+  </div>
+  <div class="buttons text-center">
+    <%= link_to "Go back", restaurants_path, class: 'btn btn-primary' %>
+    <%= link_to "Add a Review", new_restaurant_review_path(@restaurant), class: 'btn btn-success' %>
+    <%= link_to "Edit", edit_restaurant_path(@restaurant), class: 'btn btn-warning' %>
+    <%= link_to "Delete", restaurant_path(@restaurant), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
+  </div>
+  <div class="restaurant-reviews">
+    <h3>Reviews for this restaurant</h3>
+    <% @restaurant.reviews.reverse.each do |review| %>
+      <div class="row review">
+        <div class="review-list col-xs-10">
+           <% review.rating.times { %> <i class="fa fa-star"></i> <% } %>
+           <% (5 - review.rating).times { %> <i class="fa fa-star-o"></i> <% } %>
+          <p><%= review.content %></p>
+        </div>
+        <div class="review-edit col-xs-2">
+          <%= link_to "Edit", edit_review_path(review.id) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

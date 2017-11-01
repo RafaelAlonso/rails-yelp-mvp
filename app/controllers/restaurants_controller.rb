@@ -18,6 +18,11 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
+  def top
+    @all_restaurants = Restaurant.all
+    @restaurants =( @all_restaurants.sort_by &:avg_rating).reverse
+  end
+
   def show
   end
 

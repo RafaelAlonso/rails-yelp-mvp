@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-5.times do
+puts 'Creating restaurants'
+
+12.times do
   Restaurant.create(
     name: Faker::RockBand.name,
     address: Faker::Address.street_address,
@@ -15,3 +17,16 @@ require 'faker'
     category: Restaurant::CATEGORIES.sample
   )
 end
+
+puts 'Restaurants created successfully'
+puts 'Creating random reviews'
+
+50.times do
+  Review.create(
+    content: Faker::Lorem.paragraph,
+    rating: rand(0..5),
+    restaurant: Restaurant.order("RANDOM()").first
+  )
+end
+
+puts 'Reviews created'

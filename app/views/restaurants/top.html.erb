@@ -1,7 +1,7 @@
 <div class="container">
-  <h2 class="text-center">All the restaurants</h2>
+  <h2 class="text-center">Top restaurants</h2>
   <div class="row">
-    <% @restaurants.each do |restaurant| %>
+    <% @restaurants.first(4).each do |restaurant| %>
       <div class="col-xs-6 col-sm-4 col-md-3">
         <div class="text-center restaurant-card">
           <div class="card-header">

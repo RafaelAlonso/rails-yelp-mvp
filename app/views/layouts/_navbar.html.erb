@@ -1,0 +1,46 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "logo.png" %>
+  <% end %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <!-- Avatar with dropdown menu -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <h6 class="dropdown-toggle menu", data-toggle="dropdown">MENU <i class="fa fa-caret-down"></i></h6>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>
+            <%= link_to "/" do %>
+              <i class="fa fa-home"></i> <%= t(".profile", default: "All restaurants") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "/restaurants/top" do %>
+              <i class="fa fa-star"></i>  <%= t(".profile", default: "Top restaurants") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "/restaurants/new" do %>
+              <i class="fa fa-plus"></i>  <%= t(".profile", default: "New restaurant") %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><a href="/">All restaurants</a></li>
+        <li><a href="/restaurants/top">Top restaurants</a></li>
+        <li><a href="/restaurants/new">Add a new restaurant</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
