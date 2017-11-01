@@ -31,6 +31,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
+gem 'simple_form'
+gem 'autoprefixer-rails'
+gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
